@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Quiz app simple using Javascript</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <style>
+       ul{
+           list-style-type:none;
+       }
+       button{
+           margin-left: 6%;
+       }
+    </style>
+</head>
+  <body onload="ableornot();">
+   <h3>I would like to welcome to all the participants.</h3> 
+  <div style="color: burlywood; font-weight: bold;text-align: center;">Good luck</div>  
+  <div class="parent">
+      <div class="qn1">
+          <p>Who is the captain of the team Sunrisers Hyderabad of 2020?</p>
+          <ul>
+            <li><input type="checkbox" name = "check" onchange="ablenow(this);"/> Kane Williamson</li>
+              <li> <input type="checkbox" name = "check" onchange="ablenow(this);"/> Bhuvneshwor Kumar</li>
+              <li> <input type="checkbox" name = "check" onchange="ablenow(this);"/>David Warner</li>
+              <li> <input type="checkbox" name = "check" onchange="ablenow(this);"/>Manish Pandey</li>
+          </ul>
+          <div >
+              <button onclick="rightans();">Check</button>
+              <button onclick="hide();" style="display: none;">Hide</button>
+          </div>
+          <p id="ans1"></p>
+      </div>
+      <div> Your score : 0</div>
+  </div>
+  <script>
+     
+         function ablenow(checkbox) {
+
+            var checkboxes = document.getElementsByName('check');
+            checkboxes.forEach((item) => {
+               if (item !== checkbox) {
+                   item.checked = false;
+                    if(item.checled === false) {
+                        buttons[0].disabled = true;
+                    }
+               }
+                     buttons[0].disabled = false;
+                buttons[1].disabled = false;
+               })
+              
+         }
+
+          
+//main important items before me i.e. comment hahaha
+      var buttons =   document.getElementsByTagName("button");
+       function ableornot() {
+         buttons[0].disabled = true;
+         buttons[1].disabled = true;
+       }
+
+  
+
+       
+
+//Don't confuse me..
+      function rightans() {
+          var ans1 = document.getElementById("ans1");
+         ans1.innerHTML = "Manish Pandey";
+         buttons[1].style.display = "inline";
+      }
+      function hide() {
+          ans1.innerHTML = "";
+         buttons[1].style.display = "none";
+
+      }
+
+  </script>
+  </body> 
+
+</html>
